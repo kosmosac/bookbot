@@ -18,4 +18,16 @@ def get_num_letters(file_contents):
             raise Exception("FATAL")
     return num_letters
 
+def sort_on(items):
+    return items["num"]
+
+def sort_num_letters(dict_num_letters):
+    list_num_letters = []
+    for key in dict_num_letters.keys():
+        if key.isalpha():
+            list_num_letters.append({ "char": key, "num": dict_num_letters[key] })
+    list_num_letters.sort(reverse=True, key=sort_on)
+    return list_num_letters
+        
+
 
